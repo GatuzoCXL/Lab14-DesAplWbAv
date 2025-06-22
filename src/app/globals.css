@@ -5,17 +5,68 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+  }
+}
+
+/* Optimizaciones avanzadas de fuentes */
+body {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  /* Características tipográficas avanzadas */
+  font-feature-settings: 
+    'liga' 1,     /* Ligaduras */
+    'kern' 1,     /* Kerning */
+    'calt' 1,     /* Alternativas contextuales */
+    'case' 1,     /* Case sensitive forms */
+    'ss01' 1;     /* Stylistic set 01 */
+  
+  /* Renderizado óptimo */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Variables de diseño */
+  background-color: var(--background);
+  color: var(--foreground);
+  
+  /* Mejora la legibilidad en pantallas pequeñas */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Clases utilitarias para fuentes optimizadas */
+.font-sans {
+  font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-geist-mono), Monaco, Menlo, Consolas, 'Courier New', monospace;
+  font-feature-settings: 'liga' 0; /* Desactivar ligaduras en código */
+}
+
+.font-inter {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-feature-settings: 'liga' 1, 'kern' 1;
+}
+
+.font-poppins {
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  font-feature-settings: 'liga' 1, 'kern' 1;
+}
+
+/* Optimizaciones específicas para encabezados */
+h1, h2, h3, h4, h5, h6 {
+  font-feature-settings: 'liga' 1, 'kern' 1, 'dlig' 1;
+  text-rendering: optimizeLegibility;
+}
+
+/* Preload crítico - solo si es necesario */
+@media (min-width: 768px) {
+  body {
+    font-optical-sizing: auto;
   }
 }
 
