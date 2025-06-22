@@ -80,8 +80,9 @@ Next.js proporciona todas las herramientas necesarias para crear sitios web alta
 ];
 
 // Generar metadata dinámicos basados en el post
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const post = blogPosts.find(p => p.id === params.id);
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const post = blogPosts.find(p => p.id === id);
   
   if (!post) {
     return {
@@ -134,14 +135,20 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 }
 
 // Generar rutas estáticas para los posts
-export async function generateStaticParams() {
+export function generateStaticParams(): { id: string }[] {
   return blogPosts.map((post) => ({
     id: post.id,
   }));
 }
 
-export default function BlogPostPage({ params }: { params: { id: string } }) {
-  const post = blogPosts.find(p => p.id === params.id);
+type Props = {
+  params: Promise<{ id: string }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export default async function BlogPostPage({ params }: Props) {
+  const { id } = await params;
+  const post = blogPosts.find(p => p.id === id);
 
   if (!post) {
     notFound();

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { LazyLargeComponent, LazyFontShowcase } from "../components/LazyComponents";
 import InteractiveChart from "../components/InteractiveChart";
 
@@ -232,9 +233,9 @@ export default function Home() {
             Explora Más Contenido Especializado
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <a 
+            <Link 
               href="/blog"
-              className="group bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105"
+              className="group bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105 block"
             >
               <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 dark:group-hover:bg-blue-800 transition-colors">
                 <span className="text-2xl">📝</span>
@@ -242,14 +243,12 @@ export default function Home() {
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                 Blog SEO
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
-                Artículos especializados sobre técnicas avanzadas de SEO y optimización web.
-              </p>
-            </a>
+              <p className="text-gray-600 dark:text-gray-300">Aprende estrategias avanzadas y mantente actualizado con las últimas tendencias en SEO.</p>
+            </Link>
 
-            <a 
+            <Link 
               href="/herramientas-seo"
-              className="group bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105"
+              className="group bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105 block"
             >
               <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 dark:group-hover:bg-purple-800 transition-colors">
                 <span className="text-2xl">🔧</span>
@@ -257,14 +256,14 @@ export default function Home() {
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                 Herramientas SEO
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
+              <p className="text-gray-600 dark:text-gray-300">
                 Analiza y valida el SEO de tu sitio con nuestras herramientas gratuitas.
               </p>
-            </a>
+            </Link>
 
-            <a 
+            <Link 
               href="/ejemplo-rich-snippets"
-              className="group bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105"
+              className="group bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105 block"
             >
               <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900 rounded-lg flex items-center justify-center mb-4 group-hover:bg-emerald-200 dark:group-hover:bg-emerald-800 transition-colors">
                 <span className="text-2xl">⭐</span>
@@ -272,14 +271,14 @@ export default function Home() {
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                 Rich Snippets
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
-                Ejemplo práctico de implementación de datos estructurados.
+              <p className="text-gray-600 dark:text-gray-300">
+                Ejemplos prácticos de cómo implementar datos estructurados en tus páginas.
               </p>
-            </a>
+            </Link>
 
-            <a 
+            <Link 
               href="/contacto"
-              className="group bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105"
+              className="group bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all transform hover:scale-105 block"
             >
               <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-200 dark:group-hover:bg-orange-800 transition-colors">
                 <span className="text-2xl">📧</span>
@@ -287,10 +286,10 @@ export default function Home() {
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                 Contacto
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
+              <p className="text-gray-600 dark:text-gray-300">
                 Ponte en contacto para consultas de SEO y optimización web.
               </p>
-            </a>
+            </Link>
           </div>
         </section>
       </main>

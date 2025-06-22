@@ -38,7 +38,7 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
           potentialAction: {
             '@type': 'SearchAction',
             target: 'https://mi-sitio-optimizado.com/buscar?q={search_term_string}',
-            'query-input': 'required name=search_term_string'
+            'query': 'required name=search_term_string'
           }
         };
         return website;
